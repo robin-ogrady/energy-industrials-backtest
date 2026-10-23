@@ -1,0 +1,19 @@
+# Licensed Bloomberg data and anything built from it must never be published.
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.pdf
+*.pkl
+cache/
+data/
+results/
+locks/
+screenshots/
+sample/
+# Local tooling
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+.git-prereg/

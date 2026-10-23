@@ -1,0 +1,12 @@
+pandas
+numpy
+openpyxl
+rapidfuzz
+networkx
+plotly
+streamlit
+matplotlib
+reportlab
+pymupdf
+pytest
+scipy
