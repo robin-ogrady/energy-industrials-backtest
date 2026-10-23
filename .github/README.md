@@ -16,13 +16,41 @@ reason.
 The supply chain part of the screener (Linked companies) has no usable
 history and is **not** tested. Nothing here applies to it.
 
+## Verdict: NOT SUPPORTED
+
+Under the pre-registered rule, the score is **not supported**. The rule
+required all three conditions; condition 2 failed.
+
+| Condition | Result | Met? |
+|---|---|---|
+| 1. H1, final period: mean monthly rank correlation (IC) between score and next-month return above 0, one-sided p < 0.05 | IC +0.023, t 1.72, p = 0.046 | yes |
+| 2. H2, final period: mean top-minus-bottom quintile return after costs above 0, one-sided p < 0.05 | +0.57% per month, t 1.44, p = 0.078 | **no** |
+| 3. Validation period: mean IC and mean top-minus-bottom gap both above 0 | IC +0.035, gap +0.49% per month | yes |
+
+This result is not evidence that the score works or predicts returns.
+Supporting comparisons (benchmarks, random baskets) and the secondary
+versions were listed in advance as non-deciding and do not change the verdict.
+
+What it does not cover or cannot rule out:
+- The supply chain group (Linked companies) and news sentiment were not tested.
+- Sector and industry labels are today's (the sector each month comes from
+  index membership).
+- An earlier exploratory test (January to October 2026, different data)
+  overlapped the final period, and its result was seen before the rules were
+  written. Without those months the final-period IC is +0.016 and the gap
+  +0.35% per month.
+
 ## Status
 
-| Period | Return months | Rule |
+| Period | Return months | Run |
 |---|---|---|
-| Development | 2016-01 to 2019-12 | may be run repeatedly, for debugging only |
-| Validation | 2020-01 to 2022-12 | run once (lock file) |
-| Final | 2023-01 to 2026-09 | run once, after validation (lock file) |
+| Development | 2016-01 to 2019-12 | repeatedly, for debugging only |
+| Validation | 2020-01 to 2022-12 | once, 2026-10-23 16:06 PDT, locked |
+| Final | 2023-01 to 2026-09 | once, 2026-10-23 16:11 PDT, locked |
+
+Both lock files record SHA-256 hashes of the code, `config.py`,
+`PREREGISTRATION.md` and the data file. The code hashes match commit
+`c9926c3`, the commit that published the rules before these runs.
 
 Results are not stored in this repository, because they are built from
 licensed Bloomberg data. The lock files record a SHA-256 hash of every code
